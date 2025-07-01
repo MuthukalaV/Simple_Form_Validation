@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Form Validation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <style>
+        * {
+            margin: 0%;
+        }
+
+        .Main {
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(81, 3, 37);
+            position: relative;
+        }
+
+        .Sub {
+            color: white;
+            border-radius: 15%;
+            position: absolute;
+            top: 20vh;
+            left: 35vw;
+            width: 30vw;
+            height: 60vh;
+            background-color: rgb(15, 4, 83);
+        }
+
+        h3 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Main">
+        <div class="Sub">
+            <h3 class="mt-3">Simple Form Validation</h3>
+            <form onsubmit="return sumbitForm()" class="px-5 mt-4">
+                <div class="mb-3">
+                    <label for="na" class="form-label"><b>Name</b></label>
+                    <input type="text" class="form-control" id="na" placeholder="Enter-Name">
+                    <span id="a1" style="color: red;" class="form-text"></span>
+                </div>
+                <div class="mb-3">
+                    <label for="nu" class="form-label"><b>Mobile Number</b></label>
+                    <input type="text" class="form-control" id="nu" placeholder="Enter-Number">
+                    <span id="a2" style="color: red;" class="form-text"></span>
+                </div>
+                <div class="mb-3">
+                    <label for="ma" class="form-label"><b>E-mail id</b></label>
+                    <input type="mail" class="form-control" id="ma" placeholder="Enter E-mail id">
+                    <span id="a3" style="color: red;" class="form-text"></span>
+                </div>
+                <button type="submit" class="btn btn-danger">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function sumbitForm() {
+            let name = document.getElementById("na").value;
+            let number = document.getElementById("nu").value;
+            let mail = document.getElementById("ma").value;
+
+            if (name == "") {
+                document.getElementById("a1").innerHTML = "*Kindly Enter name"
+                return false;
+            }
+            else {
+                document.getElementById("a1").innerHTML = ""
+            }
+            if (number == "") {
+                document.getElementById("a2").innerHTML = "*Kindly Enter number"
+                return false;
+            }
+            else if (name == isNaN) {
+                document.getElementById("a2").innerHTML = "*Kindly Enter number type"
+                return false;
+            }
+            else {
+                document.getElementById("a2").innerHTML = ""
+            }
+            if (mail == "") {
+                document.getElementById("a3").innerHTML = "*Enter Mail id please"
+                return false;
+            }
+            else {
+                document.getElementById("a3").innerHTML = ""
+            }
+            alert("Form Sumbitted")
+            return true;
+        }
+    </script>
+</body>
+
+</html>
